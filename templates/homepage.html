@@ -1,0 +1,20 @@
+
+<html>
+{% load static %}
+<head>
+    <body>
+<nav>
+{% include 'menu.html' %}
+        {% block styles %}
+<!--    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}"/>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        {% endblock %}
+</nav>
+<h1>
+    <img src="{% static 'images/Logo Mucea Roxana1v1.png' %}" width="375"/>
+<!--    <span> Bijuteria Finessa </span>-->
+</h1>
+<h1>You are gold</h1>
+</body>
+</head>
+</html>

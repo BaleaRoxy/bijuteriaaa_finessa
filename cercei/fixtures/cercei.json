@@ -1,0 +1,42 @@
+[
+  {
+    "model": "cercei.produse",
+    "id": 1,
+    "fields": {
+      "name": "cercei cu fluturasi",
+      "quantity": 10,
+      "price": 297.90,
+      "color_gold": "galben",
+      "greutate": "14",
+      "size": 12,
+      "sistem_inchidere": "stift"
+    }
+    },
+  {
+    "model": "cercei.produse",
+    "id": 2,
+    "fields": {
+      "name": "cercei cu flori",
+      "quantity": 15,
+      "price": 149.90,
+      "color_gold": "galben",
+      "greutate": "5.2",
+      "size": 8,
+      "sistem_inchidere": "filet"
+    } },
+     {
+    "model": "cercei.produse",
+    "id": 3,
+    "fields": {
+      "name": "cercei cu stelute",
+      "quantity": 15,
+      "price": 239.90,
+      "color_gold": "galben",
+      "greutate": "4.5",
+      "size": 9,
+      "sistem_inchidere": "tortita"
+    }
+     }
+
+
+]

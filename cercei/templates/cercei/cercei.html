@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+    <title>Cercei Page</title>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    <div class = "col-12 col-m-6">
+        <h1>Cercei {{ request.session.cart }}</h1>
+        </div>
+    </div>
+      <div class="pagination">
+        {% if page_obj.has_previous %}
+  <a href="{% url 'cercei:all' %}?page={{page_obj.previous_page_number}}">Previous page</a>
+                    {% else %}
+                        <div>This is the first page.</div>
+                    {% endif %}
+                    <div class="text-danger">Current page: {{ page_obj.number }}</div>
+                    {% if page_obj.has_next %}
+                        <a href="{% url 'cercei:all' %}?page={{page_obj.next_page_number}}">Next page</a>
+                    {% else %}
+                        <div>This is the last page.</div>
+                    {% endif %}
+                </div>
+            </div>
+</div>
+
+
+    <ul class="row">
+        {% for modelcercei in page_obj %}
+        <li style="margin-bottom: 10px;" class="col-12 col-md-6">
+        <div>
+            {{modelcercei.name}} - {{modelcercei.price}} RON <a href="{% url 'cercei:details' modelcercei.id %}">Vezi modelcercei</a>
+        </div>
+            <div>
+                <form method="post" action="{% url 'cercei:add_to_cart' modelcercei.id %}">
+                    {% csrf_token %}
+<!--                    <input type = "hidden" value="{{modelcercei.id}}" name="modelcercei_id" />-->
+                    <input type = "number" value="0" name="quantity" />
+                    <input type = "submit" value="Add to cart" />
+                </form>
+            </div>
+        </li>
+    {% endfor %}
+        </ul>
+    </ul>
+{% endblock %}
+ %}

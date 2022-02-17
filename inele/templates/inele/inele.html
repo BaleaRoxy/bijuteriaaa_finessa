@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+    <title>Inele Page</title>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    <div class = "col-12 col-m-6">
+        <h1>Inele {{ request.session.cart }}</h1>
+        </div>
+    </div>
+      <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+    <ul class="row">
+        {% for inel in page_obj %}
+        <li style="margin-bottom: 10px;" class="col-12 col-md-6">
+        <div>
+            {{inel.name}} - {{inel.price}} RON <a href="{% url 'inele:details' inel.id %}">Vezi inel</a>
+        </div>
+            <div>
+                <form method="post" action="{% url 'inele:add_to_cart' inel.id %}">
+                    {% csrf_token %}
+<!--                    <input type = "hidden" value="{{inel.id}}" name="inel_id" />-->
+                    <input type = "number" value="0" name="quantity" />
+                    <input type = "submit" value="Add to cart" />
+                </form>
+            </div>
+        </li>
+    {% endfor %}
+        </ul>
+    </ul>
+{% endblock %}
+

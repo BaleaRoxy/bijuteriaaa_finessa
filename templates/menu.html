@@ -1,0 +1,35 @@
+<div class="container">
+<nav>
+        <a href="/"><button type="button" class="btn btn-light">BIJUTERIA FINESSA</button></a>
+
+        <a href="{% url 'bratari:all' %}"> <button type="button" class="btn btn-outline-dark">BRĂȚĂRI</button> </a>
+        <a href="{% url 'cercei:all' %}"><button type="button" class="btn btn-outline-dark">CERCEI</button></a>
+        <a href="{% url 'inele:all' %}"> <button type="button" class="btn btn-outline-dark">INELE</button></a></a>
+        <a href="{% url 'lanturi:all' %}"><button type="button" class="btn btn-outline-dark">LANȚURI</button></a></a>
+
+        <a href="{% url 'lingouri:all' %}"><button type="button" class="btn btn-outline-dark">LINGOURI</button></a></a>
+        <a href="{% url 'pandative:all' %}"><button type="button" class="btn btn-outline-dark">PANDATIVE</button></a></a>
+        <a href="{% url 'verighete:all' %}"><button type="button" class="btn btn-outline-dark">VERIGHETE</button></a></a>
+
+
+         {% if request.user.is_authenticated %}
+         <a href="">
+                        {% comment %}
+                            Cart ({{ request.session|bratari_no }})
+                        {% endcomment %}
+                        Cart ({{ request.session|dict_length:'cart' }})
+                    </a>
+        <a href="{% url 'users:profile' %}"><button type="button" class="btn btn-light">PROFILE</button></a>
+        <a href="{% url 'users:logout' %}"><button type="button" class="btn btn-light">LOGOUT</button></a>
+
+                {% else %}
+
+        <a href="{% url 'users:login' %}"><button type="button" class="btn btn-light">LOGIN</button></a>
+        <a href="{% url 'users:register' %}"><button type="button" class="btn btn-light">REGISTER</button></a>
+         {% endif %}
+
+
+
+
+</nav>
+    </div>

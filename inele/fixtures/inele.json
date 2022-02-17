@@ -1,0 +1,31 @@
+[
+  {
+    "model": "inele.produse",
+    "id": 1,
+    "fields": {
+      "name": "inel cu piatra neagra",
+      "quantity": 19,
+      "price": 783.99,
+      "color_gold": "galben",
+      "greutate": "3.9",
+      "size": 12,
+      "inner_size" : 17.8,
+      "stone_color": "alb, onix",
+      "stone_type": "zirconiu"}
+    }, {
+    "model": "inele.produse",
+    "id": 2,
+    "fields": {
+      "name": "inel logodna",
+      "quantity": 11,
+      "price": 899,
+      "color_gold": "galben",
+      "greutate": "3.3",
+      "size": 54,
+      "inner_size" : 17.4,
+      "stone_color": "alb",
+      "stone_type": "zirconiu"}
+
+  }
+
+]
