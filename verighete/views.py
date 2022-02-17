@@ -34,7 +34,7 @@ def add_modelverighete_to_cart(request, modelverighete_id):
         raise Http404('Quantity attribute is not valid.')
 
     cart = Cart(request)
-    cart.add(modelverighete_id, quantity)
+    cart.add(modelverighete_id, quantity, 'verighete')
 
 
     return redirect(reverse('verighete:all'))

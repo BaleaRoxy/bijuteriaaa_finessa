@@ -34,7 +34,7 @@ def add_lant_to_cart(request, lant_id):
         raise Http404('Quantity attribute is not valid.')
 
     cart = Cart(request)
-    cart.add(lant_id, quantity)
+    cart.add(lant_id, quantity, 'lanturi')
 
 
     return redirect(reverse('lanturi:all'))

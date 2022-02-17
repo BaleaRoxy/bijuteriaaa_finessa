@@ -34,7 +34,7 @@ def add_lingou_to_cart(request, lingou_id):
         raise Http404('Quantity attribute is not valid.')
 
     cart = Cart(request)
-    cart.add(lingou_id, quantity)
+    cart.add(lingou_id, quantity, 'lingouri')
 
 
     return redirect(reverse('lingouri:all'))

@@ -5,3 +5,5 @@ def homepage_view(request):
     return render(request, 'homepage.html', {
         'title': 'Love yourself',
         'Garantie': 'Garantia produselor', })
+
+

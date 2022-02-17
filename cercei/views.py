@@ -34,7 +34,7 @@ def add_modelcercei_to_cart(request, modelcercei_id):
         raise Http404('Quantity attribute is not valid.')
 
     cart = Cart(request)
-    cart.add(modelcercei_id, quantity)
+    cart.add(modelcercei_id, quantity, 'cercei')
 
 
 

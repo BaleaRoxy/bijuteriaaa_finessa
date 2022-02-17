@@ -34,7 +34,7 @@ def add_inel_to_cart(request, inel_id):
         raise Http404('Quantity attribute is not valid.')
 
     cart = Cart(request)
-    cart.add(inel_id, quantity)
+    cart.add(inel_id, quantity, 'inele')
 
 
     return redirect(reverse('inele:all'))
