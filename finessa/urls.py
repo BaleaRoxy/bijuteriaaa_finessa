@@ -28,14 +28,9 @@ from finessa.views import homepage_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage_view),
-    path ('bratari/' , include('bratari.urls')),
-    path('cercei/', include('cercei.urls')),
-    path('inele/', include('inele.urls')),
-    path('lanturi/', include('lanturi.urls')),
-    path('lingouri/', include('lingouri.urls')),
-    path('pandative/', include('pandative.urls')),
-    path('verighete/', include('verighete.urls')),
+    path ('bijuterii/' , include('bijuterii.urls')),
     path('users/', include('users.urls')),
+    path('api/', include('api.urls')),
 ]
 
 if settings.DEBUG is True:

@@ -32,24 +32,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'payments.apps.PaymentsConfig',
+    'api.apps.ApiConfig',
     'crispy_forms',
-    'bratari.apps.BratariConfig',
-    'cercei.apps.CerceiConfig',
-    'inele.apps.IneleConfig',
-    'lanturi.apps.LanturiConfig',
-    'lingouri.apps.LingouriConfig',
-    'pandative.apps.PandativeConfig',
-    'verighete.apps.VerigheteConfig',
+    'bijuterii.apps.BijuteriiConfig',
     'users.apps.UsersConfig',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lib'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -163,3 +163,16 @@ AUTH_USER_MODEL = 'users.AuthUser'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOCALHOST_DOMAIN= "http://localhost:8000"
+
+REST_FRAMEWORK ={
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',
+]
+
+STRIPE_PUBLIC_KEY=config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY=config('STRIPE_SECRET_KEY')

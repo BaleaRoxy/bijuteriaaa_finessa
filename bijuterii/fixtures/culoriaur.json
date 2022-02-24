@@ -1,0 +1,19 @@
+[{
+  "model": "bijuterii.Culoareaur",
+  "id": 1,
+  "fields": {
+    "name": "Culoareaur #1"
+  }
+}, {
+  "model": "bijuterii.Culoareaur",
+  "id": 2,
+  "fields": {
+    "name": "Culoareaur #2"
+  }
+}, {
+  "model": "bijuterii.Culoareaur",
+  "id": 3,
+  "fields": {
+    "name": "Culoareaur #3"
+  }
+}]

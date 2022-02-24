@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ bijuterie.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <p><strong>Name:</strong> {{ bijuterie.name }}</p>
+        <p><strong>Price:</strong> {{ bijuterie.price }} RON</p>
+<!--        <p><strong>Store:</strong> {{ bijuterie.store.name }}</p>-->
+<!--        <p><strong>Store Owner:</strong> {{ bijuterie.store.owner.username }}</p>-->
+        <p><strong>Culoare aur</strong></p>
+        <ul>
+            {% for culoareaur in bijuterie.culoriaur.all %}
+                <li>{{ culoareaur.name }} </li> #({{ culoareaur.extra_column }})
+            {% endfor %}
+        </ul>
+        {% comment %}
+        <ul>
+            {% for culoareaur_pivot in bijuterie.culoriaur_pivot.all %}
+                <li>{{ culoareaur_pivot.culoareaur.name }}</li>  # ({{ culoareaur_pivot.extra_column }})
+            {% endfor %}
+        </ul>
+        {% endcomment %}
+    </div>
+{% endblock %}
+
+
